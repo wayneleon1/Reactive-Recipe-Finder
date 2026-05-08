@@ -1,1 +1,381 @@
-/* You can add global styles to this file, and also import other style files */
+/* FONT FACES */
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./assets/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('./assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('./assets/fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* DESIGN TOKENS — CSS CUSTOM PROPERTIES */
+
+:root {
+  /* --- Colors: Neutral --- */
+  --neutral-900: #163a34;
+  --neutral-600: #395852;
+  --neutral-300: #d0dcd9;
+  --neutral-200: #e0e8e3;
+  --neutral-100: #f8f5f1;
+  --neutral-0: #ffffff;
+
+  /* --- Colors: Accent --- */
+  --orange-500: #fe9f6b;
+  --teal-500: #49ac9b;
+  --indigo-500: #697dd8;
+
+  /* --- Typography: Font Families --- */
+  --font-nunito: 'Nunito', sans-serif;
+  --font-nunito-sans: 'Nunito Sans', sans-serif;
+
+  /* --- Typography: Font Weights --- */
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* --- Typography: Text Presets --- */
+
+  /* Preset 1 — Hero heading desktop */
+  --text-preset-1-size: 4.5rem; /* 72px */
+  --text-preset-1-lh: 1.1;
+  --text-preset-1-ls: -0.125rem;
+  --text-preset-1-weight: var(--fw-extrabold);
+  --text-preset-1-family: var(--font-nunito);
+
+  /* Preset 1 Tablet — Hero heading tablet */
+  --text-preset-1-tablet-size: 4rem; /* 64px */
+
+  /* Preset 1 Mobile — Hero heading mobile */
+  --text-preset-1-mobile-size: 3.25rem; /* 52px */
+
+  /* Preset 2 — Section headings desktop */
+  --text-preset-2-size: 3rem; /* 48px */
+  --text-preset-2-lh: 1.2;
+  --text-preset-2-ls: -0.125rem;
+  --text-preset-2-weight: var(--fw-extrabold);
+  --text-preset-2-family: var(--font-nunito);
+
+  /* Preset 2 Mobile — Section headings mobile */
+  --text-preset-2-mobile-size: 2.5rem; /* 40px */
+  --text-preset-2-mobile-lh: 1.3;
+  --text-preset-2-mobile-ls: -0.0625rem;
+
+  /* Preset 3 — Sub-headings */
+  --text-preset-3-size: 2rem; /* 32px */
+  --text-preset-3-lh: 1.3;
+  --text-preset-3-ls: -0.0625rem;
+  --text-preset-3-weight: var(--fw-bold);
+  --text-preset-3-family: var(--font-nunito);
+
+  /* Preset 4 — Card titles */
+  --text-preset-4-size: 1.5rem; /* 24px */
+  --text-preset-4-lh: 1.3;
+  --text-preset-4-ls: -0.0625rem;
+  --text-preset-4-weight: var(--fw-bold);
+  --text-preset-4-family: var(--font-nunito);
+
+  /* Preset 5 — Small headings */
+  --text-preset-5-size: 1.25rem; /* 20px */
+  --text-preset-5-lh: 1.4;
+  --text-preset-5-ls: -0.03125rem;
+  --text-preset-5-weight: var(--fw-bold);
+  --text-preset-5-family: var(--font-nunito);
+
+  /* Preset 6 — Body large */
+  --text-preset-6-size: 1.25rem; /* 20px */
+  --text-preset-6-lh: 1.5;
+  --text-preset-6-ls: -0.025rem;
+  --text-preset-6-weight: var(--fw-medium);
+  --text-preset-6-family: var(--font-nunito-sans);
+
+  /* Preset 7 — Body medium emphasis */
+  --text-preset-7-size: 1.125rem; /* 18px */
+  --text-preset-7-lh: 1.5;
+  --text-preset-7-ls: -0.01875rem;
+  --text-preset-7-weight: var(--fw-semibold);
+  --text-preset-7-family: var(--font-nunito);
+
+  /* Preset 8 — Body medium bold */
+  --text-preset-8-size: 1.125rem; /* 18px */
+  --text-preset-8-lh: 1.6;
+  --text-preset-8-ls: -0.01875rem;
+  --text-preset-8-weight: var(--fw-bold);
+  --text-preset-8-family: var(--font-nunito-sans);
+
+  /* Preset 9 — Body default */
+  --text-preset-9-size: 1rem; /* 16px */
+  --text-preset-9-lh: 1.5;
+  --text-preset-9-ls: -0.01875rem;
+  --text-preset-9-weight: var(--fw-medium);
+  --text-preset-9-family: var(--font-nunito-sans);
+
+  /* Preset 10 — Small labels */
+  --text-preset-10-size: 0.875rem; /* 14px */
+  --text-preset-10-lh: 1.6;
+  --text-preset-10-ls: -0.01875rem;
+  --text-preset-10-weight: var(--fw-bold);
+  --text-preset-10-family: var(--font-nunito-sans);
+
+  /* --- Spacing scale --- */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-96: 6rem;
+  --space-120: 7.5rem;
+
+  /* --- Border radius --- */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  /* --- Layout --- */
+  --container-max-width: 75rem; /* 1200px */
+  --container-padding: var(--space-24);
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* BASE RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-nunito-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-preset-9-size);
+  line-height: var(--text-preset-9-lh);
+  letter-spacing: var(--text-preset-9-ls);
+  color: var(--neutral-600);
+  background-color: var(--neutral-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* UTILITY CLASSES */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Typography utilities */
+.text-preset-1 {
+  font-family: var(--text-preset-1-family);
+  font-weight: var(--text-preset-1-weight);
+  font-size: var(--text-preset-1-mobile-size);
+  line-height: var(--text-preset-1-lh);
+  letter-spacing: var(--text-preset-1-ls);
+}
+
+.text-preset-2 {
+  font-family: var(--text-preset-2-family);
+  font-weight: var(--text-preset-2-weight);
+  font-size: var(--text-preset-2-mobile-size);
+  line-height: var(--text-preset-2-mobile-lh);
+  letter-spacing: var(--text-preset-2-mobile-ls);
+}
+
+.text-preset-3 {
+  font-family: var(--text-preset-3-family);
+  font-weight: var(--text-preset-3-weight);
+  font-size: var(--text-preset-3-size);
+  line-height: var(--text-preset-3-lh);
+  letter-spacing: var(--text-preset-3-ls);
+}
+
+.text-preset-4 {
+  font-family: var(--text-preset-4-family);
+  font-weight: var(--text-preset-4-weight);
+  font-size: var(--text-preset-4-size);
+  line-height: var(--text-preset-4-lh);
+  letter-spacing: var(--text-preset-4-ls);
+}
+
+.text-preset-5 {
+  font-family: var(--text-preset-5-family);
+  font-weight: var(--text-preset-5-weight);
+  font-size: var(--text-preset-5-size);
+  line-height: var(--text-preset-5-lh);
+  letter-spacing: var(--text-preset-5-ls);
+}
+
+.text-preset-6 {
+  font-family: var(--text-preset-6-family);
+  font-weight: var(--text-preset-6-weight);
+  font-size: var(--text-preset-6-size);
+  line-height: var(--text-preset-6-lh);
+  letter-spacing: var(--text-preset-6-ls);
+}
+
+.text-preset-7 {
+  font-family: var(--text-preset-7-family);
+  font-weight: var(--text-preset-7-weight);
+  font-size: var(--text-preset-7-size);
+  line-height: var(--text-preset-7-lh);
+  letter-spacing: var(--text-preset-7-ls);
+}
+
+.text-preset-8 {
+  font-family: var(--text-preset-8-family);
+  font-weight: var(--text-preset-8-weight);
+  font-size: var(--text-preset-8-size);
+  line-height: var(--text-preset-8-lh);
+  letter-spacing: var(--text-preset-8-ls);
+}
+
+.text-preset-9 {
+  font-family: var(--text-preset-9-family);
+  font-weight: var(--text-preset-9-weight);
+  font-size: var(--text-preset-9-size);
+  line-height: var(--text-preset-9-lh);
+  letter-spacing: var(--text-preset-9-ls);
+}
+
+.text-preset-10 {
+  font-family: var(--text-preset-10-family);
+  font-weight: var(--text-preset-10-weight);
+  font-size: var(--text-preset-10-size);
+  line-height: var(--text-preset-10-lh);
+  letter-spacing: var(--text-preset-10-ls);
+}
+
+/* Responsive typography — tablet (≥768px) */
+@media (min-width: 48rem) {
+  .text-preset-1 {
+    font-size: var(--text-preset-1-tablet-size);
+  }
+
+  .text-preset-2 {
+    font-size: var(--text-preset-2-size);
+    line-height: var(--text-preset-2-lh);
+    letter-spacing: var(--text-preset-2-ls);
+  }
+}
+
+/* Responsive typography — desktop (≥1024px) */
+@media (min-width: 64rem) {
+  .text-preset-1 {
+    font-size: var(--text-preset-1-size);
+  }
+
+  .container {
+    --container-padding: var(--space-40);
+  }
+}
+
+/* Color utilities */
+.color-neutral-900 {
+  color: var(--neutral-900);
+}
+.color-neutral-600 {
+  color: var(--neutral-600);
+}
+.color-neutral-300 {
+  color: var(--neutral-300);
+}
+.color-orange-500 {
+  color: var(--orange-500);
+}
+.color-teal-500 {
+  color: var(--teal-500);
+}
+.color-indigo-500 {
+  color: var(--indigo-500);
+}
+
+/* Visually hidden (accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
