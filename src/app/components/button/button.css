@@ -1,0 +1,97 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+
+  font-family: var(--font-nunito);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-preset-7-size);
+  line-height: var(--text-preset-7-lh);
+  letter-spacing: var(--text-preset-7-ls);
+
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  /* Remove default button styles */
+  appearance: none;
+  text-decoration: none;
+}
+
+/* --- Sizes --- */
+.btn--sm {
+  padding: var(--space-8) var(--space-16);
+  font-size: var(--text-preset-10-size);
+}
+
+.btn--md {
+  padding: var(--space-12) var(--space-24);
+}
+
+.btn--lg {
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--text-preset-6-size);
+}
+
+/* --- Variants --- */
+
+/* Primary */
+.btn--primary {
+  background-color: var(--neutral-900);
+  color: var(--neutral-0);
+  border-color: var(--neutral-900);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--neutral-600);
+  border-color: var(--neutral-600);
+}
+
+.btn--primary:focus-visible {
+  outline: 3px solid var(--indigo-500);
+  outline-offset: 3px;
+  background-color: var(--neutral-900);
+  border-color: var(--neutral-900);
+}
+
+.btn--primary:active:not(:disabled) {
+  background-color: var(--neutral-900);
+  border-color: var(--indigo-500);
+}
+
+/* Secondary */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--neutral-900);
+  border-color: var(--neutral-300);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  border-color: var(--neutral-600);
+  background-color: var(--neutral-200);
+}
+
+.btn--secondary:focus-visible {
+  outline: 3px solid var(--indigo-500);
+  outline-offset: 3px;
+}
+
+/* Disabled state */
+.btn--disabled,
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Full width */
+.btn--full {
+  width: 100%;
+}

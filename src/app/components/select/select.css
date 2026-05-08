@@ -1,0 +1,66 @@
+.select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  background-color: var(--neutral-0);
+  border: 1.5px solid var(--neutral-300);
+  border-radius: var(--radius-full);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.select-wrapper:hover {
+  border-color: var(--neutral-600);
+}
+
+.select-wrapper--focused {
+  border-color: var(--indigo-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--indigo-500) 20%, transparent);
+}
+
+/* Native select — stretched over wrapper, transparent */
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-family: var(--font-nunito);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-preset-9-size);
+  line-height: var(--text-preset-9-lh);
+  color: var(--neutral-900);
+
+  padding: var(--space-12) var(--space-40) var(--space-12) var(--space-20);
+
+  width: 100%;
+}
+
+.select option {
+  color: var(--neutral-900);
+  background-color: var(--neutral-0);
+}
+
+/* Custom chevron icon */
+.select__chevron {
+  position: absolute;
+  right: var(--space-16);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.select-wrapper--focused .select__chevron {
+  opacity: 1;
+}

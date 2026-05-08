@@ -1,0 +1,21 @@
+<label class="checkbox" [class.checkbox--disabled]="disabled()" [for]="id()">
+  <input
+    class="checkbox__input sr-only"
+    type="checkbox"
+    [id]="id()"
+    [checked]="checked()"
+    [disabled]="disabled()"
+    (change)="onChange($event)"
+  />
+
+  <!-- Custom visual indicator -->
+  <span class="checkbox__indicator" [class.checkbox__indicator--checked]="checked()">
+    @if (checked()) {
+      <span class="checkbox__dot"></span>
+    }
+  </span>
+
+  @if (label()) {
+    <span class="checkbox__label">{{ label() }}</span>
+  }
+</label>

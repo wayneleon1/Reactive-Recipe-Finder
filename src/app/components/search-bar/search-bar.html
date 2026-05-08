@@ -1,0 +1,18 @@
+<div class="search-bar" [class.search-bar--focused]="isFocused()">
+  <span class="search-bar__icon" aria-hidden="true">
+    <img src="assets/images/icon-search.svg" alt="" width="20" height="20" />
+  </span>
+
+  <input
+    class="search-bar__input"
+    type="search"
+    [placeholder]="placeholder()"
+    [value]="value()"
+    (input)="onInput($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    (keydown)="onKeydown($event)"
+    autocomplete="off"
+    aria-label="Search recipes"
+  />
+</div>
