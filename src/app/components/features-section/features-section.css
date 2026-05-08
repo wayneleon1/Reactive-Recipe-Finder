@@ -1,0 +1,80 @@
+/* ============================================================
+   FEATURES SECTION
+   ============================================================ */
+
+.features {
+  padding-block: var(--space-64);
+}
+
+.features__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+.features__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+/* --- Feature grid --- */
+.features__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  list-style: none;
+}
+
+/* --- Individual feature item --- */
+.features__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+/* Icon container — small rounded square */
+.features__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--neutral-0);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.08);
+  flex-shrink: 0;
+}
+
+.features__title {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.features__description {
+  color: var(--neutral-600);
+  margin: 0;
+  max-width: 36ch;
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .features__heading {
+    text-align: center;
+  }
+
+  .features__grid {
+    flex-direction: row;
+    gap: var(--space-48);
+  }
+
+  .features__item {
+    flex: 1;
+  }
+
+  .features__description {
+    max-width: unset;
+  }
+}

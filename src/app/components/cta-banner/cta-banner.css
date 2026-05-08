@@ -1,0 +1,106 @@
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+
+.cta-banner {
+  position: relative;
+  background-color: var(--neutral-200);
+  border-radius: var(--radius-lg);
+  margin-inline: var(--space-24);
+  margin-block: var(--space-64);
+  overflow: hidden;
+  padding-block: var(--space-64);
+}
+
+/* --- Content --- */
+.cta-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-20);
+}
+
+.cta-banner__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.cta-banner__subtext {
+  color: var(--neutral-600);
+  margin: 0;
+  max-width: 38ch;
+}
+
+/* --- Decorative patterns --- */
+.cta-banner__pattern {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+
+  /* Hidden on mobile — not enough space */
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (≥768px)
+   ============================================================ */
+
+@media (min-width: 48rem) {
+  .cta-banner__pattern {
+    display: block;
+  }
+
+  /* Orange squiggle — bottom left */
+  .cta-banner__pattern--squiggle-left {
+    bottom: var(--space-16);
+    left: var(--space-40);
+    opacity: 0.9;
+  }
+
+  /* Teal squiggle — top right */
+  .cta-banner__pattern--squiggle-right {
+    top: var(--space-16);
+    right: var(--space-40);
+    opacity: 0.8;
+  }
+
+  /* Fork — left side */
+  .cta-banner__pattern--fork {
+    left: var(--space-64);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.25;
+  }
+
+  /* Knife — right side */
+  .cta-banner__pattern--knife {
+    right: var(--space-64);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.25;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .cta-banner {
+    margin-inline: var(--space-40);
+    padding-block: var(--space-80);
+  }
+
+  .cta-banner__pattern--fork {
+    left: var(--space-96);
+    opacity: 0.3;
+  }
+
+  .cta-banner__pattern--knife {
+    right: var(--space-96);
+    opacity: 0.3;
+  }
+}

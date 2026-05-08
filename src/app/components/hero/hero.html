@@ -1,0 +1,42 @@
+<section class="hero" id="home" aria-labelledby="hero-heading">
+  <div class="hero__content container">
+    <!-- Heading -->
+    <div class="hero__text">
+      <h1 class="hero__heading text-preset-1" id="hero-heading">
+        <span class="hero__heading-highlight">Healthy</span> meals, zero fuss
+      </h1>
+
+      <p class="hero__subtext text-preset-6">
+        Discover eight quick, whole-food recipes that you can cook tonight —no processed junk, no
+        guesswork.
+      </p>
+
+      <app-button variant="primary" size="md"> Start exploring </app-button>
+    </div>
+
+    <!-- Hero image with decorative squiggle -->
+    <div class="hero__image-wrapper">
+      <img
+        class="hero__image"
+        src="assets/images/image-home-hero-large.webp"
+        srcset="
+          assets/images/image-home-hero-small.webp  600w,
+          assets/images/image-home-hero-large.webp 1200w
+        "
+        sizes="(max-width: 768px) 100vw, 900px"
+        alt="Person preparing healthy food in a bright kitchen"
+        width="1200"
+        height="600"
+        loading="eager"
+      />
+
+      <!-- Decorative squiggle — desktop only -->
+      <img
+        class="hero__squiggle"
+        src="assets/images/pattern-squiggle-1.svg"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+  </div>
+</section>

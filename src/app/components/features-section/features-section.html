@@ -1,0 +1,17 @@
+<section class="features" id="about" aria-labelledby="features-heading">
+  <div class="features__inner container">
+    <h2 class="features__heading text-preset-2" id="features-heading">What you'll get</h2>
+
+    <ul class="features__grid" role="list">
+      @for (feature of features; track feature.title) {
+        <li class="features__item">
+          <div class="features__icon-wrapper" aria-hidden="true">
+            <img [src]="feature.icon" [alt]="feature.iconAlt" width="32" height="32" />
+          </div>
+          <h3 class="features__title text-preset-4">{{ feature.title }}</h3>
+          <p class="features__description text-preset-9">{{ feature.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

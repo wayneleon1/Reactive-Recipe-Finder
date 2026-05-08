@@ -26,15 +26,6 @@
   flex-shrink: 0;
 }
 
-.navbar__logo-text {
-  font-family: var(--font-nunito);
-  font-weight: var(--fw-bold);
-  font-size: var(--text-preset-5-size);
-  line-height: 1;
-  color: var(--neutral-900);
-  white-space: nowrap;
-}
-
 /* --- Desktop nav (hidden on mobile) --- */
 .navbar__nav {
   display: none;

@@ -1,0 +1,130 @@
+/* HERO */
+
+.hero {
+  padding-block: var(--space-48) var(--space-16);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+/* --- Text block --- */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+}
+
+.hero__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+/* "Healthy" word — orange highlight underline */
+.hero__heading-highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--neutral-900);
+}
+
+.hero__heading-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--orange-500);
+  border-radius: var(--radius-full);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.hero__subtext {
+  color: var(--neutral-600);
+  max-width: 42ch;
+  margin: 0;
+}
+
+/* --- Image wrapper --- */
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+/* Decorative squiggle — hidden on mobile */
+.hero__squiggle {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (≥768px)
+   ============================================================ */
+
+@media (min-width: 48rem) {
+  .hero {
+    padding-block: var(--space-64) var(--space-32);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .hero {
+    padding-block: var(--space-80) var(--space-48);
+  }
+
+  .hero__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__text {
+    align-items: center;
+  }
+
+  .hero__subtext {
+    text-align: center;
+  }
+
+  /* Desktop image: white framed card look */
+  .hero__image-wrapper {
+    max-width: 56rem;
+    background-color: var(--neutral-0);
+    border-radius: var(--radius-lg);
+    padding: var(--space-16);
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 0.06),
+      0 8px 24px rgb(0 0 0 / 0.08);
+  }
+
+  .hero__image {
+    border-radius: var(--radius-md);
+    max-height: 26rem;
+    object-position: center 30%;
+  }
+
+  /* Show decorative squiggle on desktop */
+  .hero__squiggle {
+    display: block;
+    position: absolute;
+    right: -3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.7;
+  }
+}

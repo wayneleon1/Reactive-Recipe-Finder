@@ -1,5 +1,5 @@
 /* FONT FACES */
-
+/*
 @font-face {
   font-family: 'Nunito';
   src: url('./assets/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
@@ -32,7 +32,7 @@
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
-}
+} */
 
 /* DESIGN TOKENS — CSS CUSTOM PROPERTIES */
 
