@@ -1,0 +1,195 @@
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--neutral-100);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem; /* 72px */
+}
+
+/* --- Logo --- */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-text {
+  font-family: var(--font-nunito);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-preset-5-size);
+  line-height: 1;
+  color: var(--neutral-900);
+  white-space: nowrap;
+}
+
+/* --- Desktop nav (hidden on mobile) --- */
+.navbar__nav {
+  display: none;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-32);
+  list-style: none;
+}
+
+.navbar__link {
+  position: relative;
+  font-family: var(--font-nunito);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-preset-9-size);
+  color: var(--neutral-900);
+  text-decoration: none;
+  padding-bottom: var(--space-4);
+  transition: color var(--transition-fast);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--orange-500);
+  border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.navbar__link--active::after,
+.navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar__link--active {
+  color: var(--neutral-900);
+}
+
+/* --- Desktop CTA (hidden on mobile) --- */
+.navbar__cta {
+  display: none;
+  flex-shrink: 0;
+}
+
+/* --- Mobile hamburger (visible on mobile only) --- */
+.navbar__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--neutral-300);
+  background-color: var(--neutral-0);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.navbar__hamburger:hover {
+  border-color: var(--neutral-600);
+  background-color: var(--neutral-200);
+}
+
+.navbar__hamburger:focus-visible {
+  outline: 3px solid var(--indigo-500);
+  outline-offset: 2px;
+}
+
+/* --- Mobile menu dropdown --- */
+.navbar__mobile-menu {
+  position: absolute;
+  top: calc(4.5rem + 1px); /* navbar height + border */
+  left: var(--space-24);
+  right: var(--space-24);
+  z-index: 99;
+
+  background-color: var(--neutral-0);
+  border-radius: var(--radius-md);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.08),
+    0 10px 24px -4px rgb(0 0 0 / 0.12);
+  overflow: hidden;
+
+  /* Subtle entrance animation */
+  animation: menu-open 200ms ease forwards;
+}
+
+@keyframes menu-open {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.navbar__mobile-link {
+  display: block;
+  padding: var(--space-16) var(--space-24);
+  font-family: var(--font-nunito);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-preset-7-size);
+  color: var(--neutral-900);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.navbar__mobile-link:hover {
+  background-color: var(--neutral-100);
+}
+
+.navbar__mobile-link--active {
+  color: var(--neutral-900);
+  font-weight: var(--fw-bold);
+}
+
+.navbar__mobile-cta {
+  padding: var(--space-16) var(--space-16) var(--space-16);
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet & Desktop (≥768px)
+   ============================================================ */
+
+@media (min-width: 48rem) {
+  .navbar__nav {
+    display: flex;
+  }
+
+  .navbar__cta {
+    display: flex;
+  }
+
+  .navbar__hamburger {
+    display: none;
+  }
+
+  .navbar__mobile-menu {
+    display: none;
+  }
+}
