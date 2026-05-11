@@ -3,13 +3,11 @@ import { AboutHero } from '../../components/about-hero/about-hero';
 import { SectionWithList, ListItem } from '../../components/section-with-list/section-with-list';
 import { BeyondThePlate } from '../../components/beyond-the-plate/beyond-the-plate';
 import { CtaBanner } from '../../components/cta-banner/cta-banner';
-import { Footer } from '../../components/footer/footer';
-import { Navbar } from '../../components/navbar/navbar';
 
 @Component({
   selector: 'app-about-page',
   standalone: true,
-  imports: [Navbar, AboutHero, SectionWithList, BeyondThePlate, CtaBanner, Footer],
+  imports: [AboutHero, SectionWithList, BeyondThePlate, CtaBanner],
   templateUrl: './about-page.html',
   styleUrl: './about-page.css',
 })

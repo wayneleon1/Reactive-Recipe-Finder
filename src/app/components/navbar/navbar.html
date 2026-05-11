@@ -1,7 +1,7 @@
 <header class="navbar">
   <div class="navbar__inner container">
     <!-- Logo -->
-    <a href="#home" class="navbar__logo" aria-label="Healthy Recipe Finder - Go to home">
+    <a [routerLink]="'/'" class="navbar__logo" aria-label="Healthy Recipe Finder - Go to home">
       <img src="assets/images/logo.svg" alt="" aria-hidden="true" />
     </a>
 
@@ -11,10 +11,11 @@
         @for (link of navLinks; track link.label) {
           <li>
             <a
-              [href]="link.href"
+              [routerLink]="link.route"
+              routerLinkActive="navbar__link--active"
+              [routerLinkActiveOptions]="{ exact: link.route === '/' }"
               class="navbar__link"
-              [class.navbar__link--active]="activeLink() === link.label"
-              (click)="setActive(link.label)"
+              (click)="closeMobileMenu()"
             >
               {{ link.label }}
             </a>
@@ -59,10 +60,11 @@
         @for (link of navLinks; track link.label) {
           <li>
             <a
-              [href]="link.href"
+              [routerLink]="link.route"
+              routerLinkActive="navbar__mobile-link--active"
+              [routerLinkActiveOptions]="{ exact: link.route === '/' }"
               class="navbar__mobile-link"
-              [class.navbar__mobile-link--active]="activeLink() === link.label"
-              (click)="setActive(link.label)"
+              (click)="closeMobileMenu()"
             >
               {{ link.label }}
             </a>
