@@ -14,7 +14,7 @@ interface NavLink {
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class NavbarComponent {
+export class Navbar {
   readonly navLinks: NavLink[] = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },

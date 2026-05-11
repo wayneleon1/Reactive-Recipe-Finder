@@ -1,0 +1,57 @@
+import { Component } from '@angular/core';
+import { AboutHero } from '../../components/about-hero/about-hero';
+import { SectionWithList, ListItem } from '../../components/section-with-list/section-with-list';
+import { BeyondThePlate } from '../../components/beyond-the-plate/beyond-the-plate';
+import { CtaBanner } from '../../components/cta-banner/cta-banner';
+import { Footer } from '../../components/footer/footer';
+import { Navbar } from '../../components/navbar/navbar';
+
+@Component({
+  selector: 'app-about-page',
+  standalone: true,
+  imports: [Navbar, AboutHero, SectionWithList, BeyondThePlate, CtaBanner, Footer],
+  templateUrl: './about-page.html',
+  styleUrl: './about-page.css',
+})
+export class AboutPage {
+  readonly whyWeExistItems: ListItem[] = [
+    {
+      title: 'Cut through the noise.',
+      description:
+        'The internet is bursting with recipes, yet most busy cooks still default to take-away or packaged foods. We curate a tight collection of fool-proof dishes so you can skip the scrolling and start cooking.',
+    },
+    {
+      title: 'Empower home kitchens.',
+      description:
+        'When you control what goes into your meals, you control how you feel. Every recipe is built around unrefined ingredients and ready in about half an hour of active prep.',
+    },
+    {
+      title: 'Make healthy look good.',
+      description:
+        'High-resolution imagery shows you exactly what success looks like—because we eat with our eyes first, and confidence matters.',
+    },
+  ];
+
+  readonly foodPhilosophyItems: ListItem[] = [
+    {
+      title: 'Whole ingredients first.',
+      description:
+        'Fresh produce, grains, legumes, herbs, and quality fats form the backbone of every recipe.',
+    },
+    {
+      title: 'Flavor without compromise.',
+      description:
+        'Spices, citrus, and natural sweetness replace excess salt, sugar, and additives.',
+    },
+    {
+      title: 'Respect for time.',
+      description:
+        'Weeknight meals should slot into real schedules; weekend cooking can be leisurely but never wasteful.',
+    },
+    {
+      title: 'Sustainable choices.',
+      description:
+        'Short ingredient lists cut down on food waste and carbon footprint, while plant-forward dishes keep things planet-friendly.',
+    },
+  ];
+}

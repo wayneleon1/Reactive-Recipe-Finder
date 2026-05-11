@@ -1,0 +1,34 @@
+<section class="section-list" [attr.aria-labelledby]="'section-' + heading()">
+  <div class="section-list__inner container">
+    <!-- Section heading -->
+    <h2 class="section-list__heading text-preset-2" [id]="'section-' + heading()">
+      {{ heading() }}
+    </h2>
+
+    <!-- Items list -->
+    <ul class="section-list__items" role="list">
+      @for (item of items(); track item.title) {
+        <li class="section-list__item">
+          <!-- Custom bullet icon -->
+          <img
+            class="section-list__bullet"
+            src="assets/images/icon-bullet-point.svg"
+            alt=""
+            aria-hidden="true"
+            width="16"
+            height="16"
+          />
+
+          <div class="section-list__content">
+            <h3 class="section-list__item-title text-preset-5">
+              {{ item.title }}
+            </h3>
+            <p class="section-list__item-desc text-preset-9">
+              {{ item.description }}
+            </p>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

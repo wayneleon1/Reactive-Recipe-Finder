@@ -1,0 +1,100 @@
+.about-hero {
+  padding-block: var(--space-48) var(--space-64);
+}
+
+.about-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+/* --- Text --- */
+.about-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+/* Orange pill badge */
+.about-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-4) var(--space-12);
+  background-color: var(--orange-500);
+  color: var(--neutral-0);
+  border-radius: var(--radius-full);
+  font-weight: var(--fw-bold);
+  align-self: flex-start;
+}
+
+.about-hero__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.about-hero__body {
+  color: var(--neutral-600);
+  margin: 0;
+}
+
+/* --- Image --- */
+.about-hero__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.about-hero__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  display: block;
+  max-height: 24rem;
+  object-position: center top;
+}
+
+/* Decorative squiggle — hidden on mobile/tablet */
+.about-hero__squiggle {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .about-hero {
+    padding-block: var(--space-64) var(--space-80);
+  }
+
+  .about-hero__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-64);
+  }
+
+  .about-hero__text {
+    flex: 1;
+    max-width: 30rem;
+  }
+
+  .about-hero__image-wrapper {
+    flex: 1;
+    max-width: 26rem;
+  }
+
+  .about-hero__image {
+    max-height: unset;
+    height: 26rem;
+  }
+
+  /* Teal squiggle bottom-right of image */
+  .about-hero__squiggle {
+    display: block;
+    position: absolute;
+    bottom: -1.5rem;
+    right: -2rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+}

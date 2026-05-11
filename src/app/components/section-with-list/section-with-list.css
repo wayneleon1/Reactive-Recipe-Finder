@@ -1,0 +1,80 @@
+/* ============================================================
+   SECTION WITH LIST
+   ============================================================ */
+
+.section-list {
+  padding-block: var(--space-64);
+}
+
+.section-list__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+/* --- Heading --- */
+.section-list__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+/* --- Items list --- */
+.section-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  list-style: none;
+}
+
+/* --- Individual item --- */
+.section-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+/* Custom bullet icon — aligned to first line of title */
+.section-list__bullet {
+  flex-shrink: 0;
+  margin-top: 0.2rem; /* optical alignment with text */
+}
+
+.section-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.section-list__item-title {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.section-list__item-desc {
+  color: var(--neutral-600);
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .section-list__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-96);
+  }
+
+  /* Heading stays on the left, fixed width */
+  .section-list__heading {
+    flex: 0 0 16rem;
+    position: sticky;
+    top: calc(4.5rem + var(--space-32)); /* below sticky navbar */
+  }
+
+  /* List takes remaining space */
+  .section-list__items {
+    flex: 1;
+  }
+}

@@ -1,0 +1,87 @@
+/* ============================================================
+   BEYOND THE PLATE
+   ============================================================ */
+
+.beyond {
+  padding-block: var(--space-64);
+}
+
+.beyond__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+/* --- Text --- */
+.beyond__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.beyond__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.beyond__body {
+  color: var(--neutral-600);
+  margin: 0;
+}
+
+/* Standard bullet list */
+.beyond__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-left: var(--space-20);
+  list-style: disc;
+  color: var(--neutral-600);
+  margin: 0;
+}
+
+.beyond__list li::marker {
+  color: var(--neutral-600);
+}
+
+/* --- Image --- */
+.beyond__image-wrapper {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.beyond__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 24rem;
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .beyond__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-64);
+  }
+
+  .beyond__text {
+    flex: 1;
+    max-width: 28rem;
+  }
+
+  .beyond__image-wrapper {
+    flex: 1;
+    max-width: 26rem;
+  }
+
+  .beyond__image {
+    max-height: unset;
+    height: 22rem;
+  }
+}
