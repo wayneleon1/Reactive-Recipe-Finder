@@ -10,7 +10,7 @@ import { Button } from '../button/button';
   templateUrl: './recipe-card.html',
   styleUrl: './recipe-card.css',
 })
-export class RecipeCardComponent {
+export class RecipeCard {
   readonly recipe = input.required<Recipe>();
 
   readonly viewRecipe = output<Recipe>();

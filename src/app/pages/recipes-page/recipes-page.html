@@ -1,0 +1,59 @@
+<div class="recipes-page">
+  <!-- Page header -->
+  <div class="recipes-page__header container">
+    <h1 class="recipes-page__heading text-preset-2">Explore our simple, healthy recipes</h1>
+    <p class="recipes-page__subtext text-preset-9">
+      Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use
+      the search bar to find a recipe by name or ingredient, or simply scroll the list and let
+      something delicious catch your eye.
+    </p>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="recipes-page__filters container">
+    <div class="recipes-page__dropdowns">
+      <!-- Max Prep Time -->
+      <app-time-filter-dropdown
+        label="Max Prep Time"
+        [options]="prepTimeOptions"
+        [selected]="maxPrepTime()"
+        (selectedChange)="onPrepTimeChange($event)"
+      />
+
+      <!-- Max Cook Time -->
+      <app-time-filter-dropdown
+        label="Max Cook Time"
+        [options]="cookTimeOptions"
+        [selected]="maxCookTime()"
+        (selectedChange)="onCookTimeChange($event)"
+      />
+    </div>
+
+    <!-- Search bar -->
+    <div class="recipes-page__search">
+      <app-search-bar
+        placeholder="Search by name or ingredient..."
+        [value]="searchQuery()"
+        (valueChange)="onSearchChange($event)"
+      />
+    </div>
+  </div>
+
+  <!-- Results count -->
+  <div class="recipes-page__count container" aria-live="polite" aria-atomic="true">
+    <span class="text-preset-10">
+      {{ filteredCount() }} {{ filteredCount() === 1 ? 'recipe' : 'recipes' }} found
+    </span>
+  </div>
+
+  <!-- Recipe grid -->
+  <div class="recipes-page__grid container">
+    @if (filteredRecipes().length > 0) {
+      @for (recipe of filteredRecipes(); track recipe.id) {
+        <app-recipe-card [recipe]="recipe" (viewRecipe)="onViewRecipe($event)" />
+      }
+    } @else {
+      <app-empty-state [searchQuery]="searchQuery()" />
+    }
+  </div>
+</div>

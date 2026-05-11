@@ -1,0 +1,23 @@
+<div class="empty-state" role="status" aria-live="polite">
+  <img
+    class="empty-state__icon"
+    src="assets/images/icon-search.svg"
+    alt=""
+    aria-hidden="true"
+    width="48"
+    height="48"
+  />
+
+  <h3 class="empty-state__heading text-preset-4">No recipes found</h3>
+
+  @if (searchQuery()) {
+    <p class="empty-state__message text-preset-9">
+      No results for "<strong>{{ searchQuery() }}</strong
+      >". Try a different name, ingredient, or adjust your time filters.
+    </p>
+  } @else {
+    <p class="empty-state__message text-preset-9">
+      No recipes match your current filters. Try adjusting or clearing the time filters.
+    </p>
+  }
+</div>

@@ -1,0 +1,51 @@
+<div class="dropdown" [class.dropdown--open]="isOpen()">
+  <!-- Trigger button -->
+  <button
+    class="dropdown__trigger"
+    [class.dropdown__trigger--active]="selected() !== null"
+    (click)="toggle()"
+    [attr.aria-expanded]="isOpen()"
+    [attr.aria-label]="label() + ' filter'"
+    type="button"
+  >
+    <span class="dropdown__label">{{ displayLabel }}</span>
+    <img
+      class="dropdown__chevron"
+      src="assets/images/icon-chevron-down.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
+  </button>
+
+  <!-- Dropdown panel -->
+  @if (isOpen()) {
+    <div class="dropdown__panel" role="listbox" [attr.aria-label]="label() + ' options'">
+      <ul class="dropdown__options" role="list">
+        @for (option of options(); track option) {
+          <li class="dropdown__option">
+            <label class="dropdown__option-label">
+              <input
+                class="dropdown__radio"
+                type="radio"
+                [name]="label()"
+                [value]="option"
+                [checked]="selected() === option"
+                (change)="select(option)"
+              />
+              <span class="dropdown__radio-custom">
+                @if (selected() === option) {
+                  <span class="dropdown__radio-dot"></span>
+                }
+              </span>
+              <span class="dropdown__option-text">{{ option }} minutes</span>
+            </label>
+          </li>
+        }
+      </ul>
+
+      <button class="dropdown__clear" type="button" (click)="clear()">Clear</button>
+    </div>
+  }
+</div>

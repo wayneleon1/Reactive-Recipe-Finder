@@ -1,0 +1,104 @@
+/* ============================================================
+   RECIPES PAGE
+   ============================================================ */
+
+.recipes-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  padding-block: var(--space-48) var(--space-80);
+}
+
+/* --- Page header --- */
+.recipes-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.recipes-page__heading {
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.recipes-page__subtext {
+  color: var(--neutral-600);
+  margin: 0;
+}
+
+/* --- Filter bar --- */
+.recipes-page__filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.recipes-page__dropdowns {
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.recipes-page__search {
+  width: 100%;
+}
+
+/* --- Results count --- */
+.recipes-page__count {
+  color: var(--neutral-600);
+}
+
+/* --- Recipe grid --- */
+.recipes-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (≥768px)
+   ============================================================ */
+
+@media (min-width: 48rem) {
+  .recipes-page__filters {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .recipes-page__dropdowns {
+    flex-shrink: 0;
+  }
+
+  .recipes-page__search {
+    width: 18rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================================ */
+
+@media (min-width: 64rem) {
+  .recipes-page {
+    gap: var(--space-40);
+  }
+
+  /* Centered header on desktop */
+  .recipes-page__header {
+    text-align: center;
+    align-items: center;
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .recipes-page__subtext {
+    max-width: 52ch;
+  }
+
+  /* 3-column grid */
+  .recipes-page__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+  }
+}
