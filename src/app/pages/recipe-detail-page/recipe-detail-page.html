@@ -1,0 +1,102 @@
+@if (recipe(); as recipe) {
+  <div class="detail-page">
+    <!-- Breadcrumb -->
+    <div class="detail-page__breadcrumb container">
+      <app-breadcrumb [items]="breadcrumbItems()" />
+    </div>
+
+    <!-- Hero: image + content -->
+    <div class="detail-page__hero container">
+      <!-- Image -->
+      <div class="detail-page__image-wrapper">
+        <img
+          class="detail-page__image"
+          [src]="recipe.image.large"
+          [srcset]="recipe.image.small + ' 600w, ' + recipe.image.large + ' 1200w'"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          [alt]="recipe.title"
+          width="800"
+          height="600"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="detail-page__content">
+        <!-- Title & overview -->
+        <h1 class="detail-page__title text-preset-2">{{ recipe.title }}</h1>
+        <p class="detail-page__overview text-preset-9">{{ recipe.overview }}</p>
+
+        <!-- Meta -->
+        <div class="detail-page__meta">
+          <span class="detail-page__meta-item">
+            <img src="assets/images/icon-servings.svg" alt="Servings" width="16" height="16" />
+            <span class="text-preset-10">Servings: {{ recipe.servings }}</span>
+          </span>
+          <span class="detail-page__meta-item">
+            <img src="assets/images/icon-prep-time.svg" alt="Prep time" width="16" height="16" />
+            <span class="text-preset-10">Prep: {{ recipe.prepMinutes }} mins</span>
+          </span>
+          <span class="detail-page__meta-item">
+            <img src="assets/images/icon-cook-time.svg" alt="Cook time" width="16" height="16" />
+            <span class="text-preset-10">Cook: {{ recipe.cookMinutes }} mins</span>
+          </span>
+        </div>
+
+        <!-- Ingredients -->
+        <section class="detail-page__section" aria-labelledby="ingredients-heading">
+          <h2 class="detail-page__section-heading text-preset-5" id="ingredients-heading">
+            Ingredients:
+          </h2>
+          <ul class="detail-page__list" role="list">
+            @for (ingredient of recipe.ingredients; track ingredient) {
+              <li class="detail-page__list-item">
+                <img
+                  src="assets/images/icon-bullet-point.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                />
+                <span class="text-preset-9">{{ ingredient }}</span>
+              </li>
+            }
+          </ul>
+        </section>
+
+        <!-- Instructions -->
+        <section class="detail-page__section" aria-labelledby="instructions-heading">
+          <h2 class="detail-page__section-heading text-preset-5" id="instructions-heading">
+            Instructions:
+          </h2>
+          <ul class="detail-page__list" role="list">
+            @for (step of recipe.instructions; track step) {
+              <li class="detail-page__list-item">
+                <img
+                  src="assets/images/icon-bullet-point.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                />
+                <span class="text-preset-9">{{ step }}</span>
+              </li>
+            }
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- More recipes -->
+    <div class="detail-page__more">
+      <div class="container">
+        <h2 class="detail-page__more-heading text-preset-3">More recipes</h2>
+        <div class="detail-page__more-grid">
+          @for (more of moreRecipes(); track more.id) {
+            <app-recipe-card [recipe]="more" (viewRecipe)="onViewRecipe($event)" />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

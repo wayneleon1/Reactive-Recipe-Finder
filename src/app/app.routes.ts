@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomePage } from './pages/home-page/home-page';
 import { AboutPage } from './pages/about-page/about-page';
 import { RecipesPage } from './pages/recipes-page/recipes-page';
+import { RecipeDetailPage } from './pages/recipe-detail-page/recipe-detail-page';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
     path: 'recipes',
     component: RecipesPage,
     title: 'Recipes — Healthy Recipe Finder',
+  },
+  {
+    path: 'recipes/:slug',
+    component: RecipeDetailPage,
   },
   {
     path: '**',

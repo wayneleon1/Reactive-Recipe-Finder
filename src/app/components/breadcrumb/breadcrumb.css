@@ -1,0 +1,52 @@
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.breadcrumb__link {
+  color: var(--neutral-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb__link:hover {
+  color: var(--neutral-900);
+  text-decoration: underline;
+}
+
+.breadcrumb__link:focus-visible {
+  outline: 2px solid var(--indigo-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.breadcrumb__separator {
+  color: var(--neutral-300);
+  font-size: var(--text-preset-10-size);
+}
+
+.breadcrumb__current {
+  color: var(--neutral-900);
+  font-weight: var(--fw-bold);
+
+  /* Truncate long recipe titles on small screens */
+  max-width: 18ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 48rem) {
+    max-width: unset;
+  }
+}
